@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dunia 乂 Digital - Top Up</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<style>
+body {
+  background: linear-gradient(180deg, #dff1ff 0%, #c7e4ff 35%, #a7d2ff 70%, #8ac1ff 100%);
+  background-attachment: fixed;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* biar blur gak ganggu klik */
+body::before,
+body::after {
+  pointer-events: none;
+}
+
+body::before {
+  content:"";
+  position: absolute;
+  top: -100px; left: -50px;
+  width: 200%; height: 300px;
+  background: rgba(255,255,255,0.55);
+  filter: blur(40px);
+  transform: rotate(-8deg);
+}
+body::after {
+  content:"";
+  position: absolute;
+  bottom: -150px; right: -50px;
+  width: 200%; height: 300px;
+  background: rgba(255,255,255,0.35);
+  filter: blur(55px);
+  transform: rotate(12deg);
+}
+
+.btn { padding:6px 10px; border-radius:6px; color:white; font-weight:600; }
+.btn-beli { background:#0d6efd; }
+.btn-beli:hover { background:#0a58ca; }
+
+button.buy-btn { width: 100%; cursor: pointer; user-select: none; }
+
+.section { max-width:1100px; margin:auto; padding:10px; }
+
+.card {
+ background:white; border-radius:14px; padding:15px;
+ box-shadow:0 4px 18px rgba(0,0,0,.10);
+ border:1px solid rgba(255,255,255,0.6);
+ backdrop-filter:blur(6px);
+ opacity:0;
+ transform: translateY(15px);
+ transition: opacity .4s ease, transform .4s ease;
+}
+.card.show {
+ opacity:1;
+ transform: translateY(0);
+}
+
+#waBtn {
+ position: fixed; bottom: 20px; left: 20px;
+ background:#25d366; color:white; border-radius:10%;
+ width:60px; height:60px; display:flex; align-items:center;
+ justify-content:center; font-size:28px;
+ box-shadow:0 4px 10px rgba(0,0,0,0.2); z-index:999;
+}
+
+/* ✨ RGB teks judul baru */
+.judul-rgb-glow {
+  background: linear-gradient(90deg, #ff2d2d, #4dc9ff, #fff84d, #ffffff, #ff2d2d);
+  background-size: 500%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rgbflow 4s linear infinite, glowflow 2s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+@keyframes rgbflow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+@keyframes glowflow {
+  0%,100% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ff2d2d; }
+  25% { text-shadow: 0 0 10px #4dc9ff, 0 0 20px #4dc9ff; }
+  50% { text-shadow: 0 0 10px #fff84d, 0 0 20px #fff84d; }
+  75% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; }
+}
+</style>
+</head>
+
+<body>
+<a id="waBtn" href="https://wa.me/6289654726537" target="_blank">cs</a>
+
+<section class="w-full relative overflow-hidden py-10">
+  <div class="text-center text-black px-4">
+    <h1 class="judul-rgb-glow text-4xl md:text-5xl font-extrabold">Dunia 乂 Digital</h1>
+    <p class="text-gray-700 mt-2 text-lg">Top Up Game, E-Wallet & PLN Termurah ⚡</p>
+  </div>
+
+<!-- ✅ KATEGORI -->
+<div class="grid grid-cols-4 md:grid-cols-6 gap-4 text-center mt-6">
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="ff">
+    <img src="https://smail.my.id/cloud/iehNp3Oi1" class="w-16 h-16 rounded-full shadow-md object-cover">
+    <p class="mt-1 font-semibold text-black text-sm">Free Fire</p>
+  </div>
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="ml">
+    <img src="https://smail.my.id/cloud/ggOPdsJs1" class="w-16 h-16 rounded-full shadow-md object-cover">
+    <p class="mt-1 font-semibold text-black text-sm">MLBB</p>
+  </div>
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="gopay">
+    <img src="https://smail.my.id/cloud/yfnEdArj1" class="w-16 h-16 rounded-full shadow-md object-cover">
+    <p class="mt-1 font-semibold text-black text-sm">Gopay</p>
+  </div>
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="dana">
+    <img src="https://smail.my.id/cloud/UvNwYaS31" class="w-16 h-16 rounded-full shadow-md object-cover">
+    <p class="mt-1 font-semibold text-black text-sm">Dana</p>
+  </div>
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="ovo">
+    <img src="https://smail.my.id/cloud/LvjQf8fQ1" class="w-16 h-16 rounded-full shadow-md object-contain bg-white p-2">
+    <p class="mt-1 font-semibold text-black text-sm">OVO</p>
+  </div>
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="pulsa">
+    <img src="https://smail.my.id/cloud/9ZW93D0J1" class="w-16 h-16 rounded-full shadow-md object-cover">
+    <p class="mt-1 font-semibold text-black text-sm">Pulsa</p>
+  </div>
+  <div class="cat-btn flex flex-col items-center cursor-pointer" data-cat="pln">
+    <img src="https://smail.my.id/cloud/Hp365b9c1" class="w-16 h-16 rounded-full shadow-md object-cover">
+    <p class="mt-1 font-semibold text-black text-sm">Token PLN</p>
+  </div>
+</div>
+
+<div class="section">
+  <h1 class="text-3xl font-bold mb-6 text-center">Menu Produk</h1>
+  <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4"></div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("productGrid");
+
+  const ffProducts = [
+    { name: "12 Diamond", price: 2000 },{ name: "50 Diamond", price: 6300 },
+    { name: "70 Diamond", price: 9700 },{ name: "100 Diamond", price: 13000 },
+    { name: "140 Diamond", price: 18000 },{ name: "Membership Mingguan", price: 28000 },
+    { name: "210 Diamond", price: 25000 },{ name: "300 Diamond", price: 36000 },
+    { name: "Booyah Pass", price: 39000 },{ name: "355 Diamond", price: 42000 },
+    { name: "500 Diamond", price: 58000 },{ name: "Membership Bulanan", price: 80000 },
+    { name: "720 Diamond", price: 81000 },{ name: "1000 Diamond", price: 115000 },
+    { name: "1450 Diamond", price: 163000 },{ name: "2180 Diamond", price: 245000 },
+    { name: "3640 Diamond", price: 410000 },{ name: "4000 Diamond", price: 450000 },
+    { name: "7290 Diamond", price: 810000 }
+  ];
+
+  // Tambah produk FF
+  ffProducts.forEach(p => {
+    let admin = Math.floor(Math.random() * 201);
+    let price = p.price + admin;
+    addProduct("ff", p.name, price);
+  });
+
+  // GOPAY
+  for (let n=5000;n<=500000;n+=5000){
+    addProduct("gopay", "GOPAY "+n.toLocaleString(), n+1000);
+  }
+
+  // OVO
+  for (let n=5000;n<=500000;n+=5000){
+    let adm = Math.floor(Math.random()*151)+100;
+    addProduct("ovo","OVO "+n.toLocaleString(), n+adm);
+  }
+
+  // DANA
+  for (let n=5000;n<=500000;n+=5000){
+    addProduct("dana","DANA "+n.toLocaleString(), n+350);
+  }
+
+  // Pulsa
+  for (let n=5000;n<=500000;n+=5000){
+    let adm = n<30000?600:250;
+    addProduct("pulsa","Pulsa "+n.toLocaleString(), n+adm);
+  }
+
+  // PLN
+  for (let n=5000;n<=500000;n+=5000){
+    addProduct("pln","Token PLN "+n.toLocaleString(), n+2000);
+  }
+
+  function addProduct(cat,name,price){
+    let div=document.createElement("div");
+    div.className="card product-item";
+    div.dataset.cat=cat;
+    div.innerHTML=`<p class='font-bold'>${name}</p>
+      <p>Rp${price.toLocaleString()}</p>
+      <button class='btn btn-beli buy-btn' data-name='${name}' data-price='${price}'>Beli</button>`;
+    grid.appendChild(div);
+  }
+
+  // === Animasi muncul (fade + stagger)
+  function showCategory(cat){
+    const items=document.querySelectorAll(".product-item");
+    let i=0;
+    items.forEach(it=>{
+      it.style.display=it.dataset.cat===cat?"block":"none";
+      it.classList.remove("show");
+    });
+    const visibles=[...items].filter(it=>it.dataset.cat===cat);
+    visibles.forEach((it,idx)=>{
+      setTimeout(()=>it.classList.add("show"), idx*70);
+    });
+  }
+
+  document.querySelectorAll(".cat-btn").forEach(btn=>{
+    btn.addEventListener("click",()=>showCategory(btn.dataset.cat));
+  });
+
+  // tampil default
+  showCategory("ff");
+});
+
+// ✅ tombol beli
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".buy-btn");
+  if(!b)return;
+  const n=b.dataset.name,p=b.dataset.price;
+  window.location.href=`payment.html?paket=${encodeURIComponent(n)}&harga=${encodeURIComponent(p)}`;
+});
+</script>
+
+</body>
+</html>
